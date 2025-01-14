@@ -1,0 +1,62 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- #forCustomizingStyle
+
+     <link rel="stylesheet" href="./css/style.css"> -->
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
+            Image Generator
+        </h1>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="space-y-4">
+                <textarea 
+                    id="prompt" 
+                    placeholder="Enter your prompt here" 
+                    rows="4" 
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                ></textarea>
+                
+                <button 
+                    id="generateBtn"
+                    class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                >
+                    Generate Image
+                </button>
+                
+                <div 
+                    id="loading" 
+                    class="hidden text-center text-gray-600"
+                >
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-gray-300 border-t-blue-600 mb-2"></div>
+                    <p>Generating image...</p>
+                </div>
+                
+                <div 
+                    id="error" 
+                    class="hidden text-red-600 text-sm"
+                ></div>
+            </div>
+        </div>
+        
+        <div id="result" class="flex justify-center">
+            <img 
+                id="generatedImage" 
+                class="hidden max-w-full rounded-lg shadow-lg" 
+                alt="Generated image"
+            >
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
