@@ -34,7 +34,7 @@ app.post('/generate', async (req, res) => {
     try {
         const payload = {
             prompt: prompt,
-            output_format: 'jpg'
+            output_format: 'jpeg'
         };
 
         const response = await axios.postForm(
@@ -53,7 +53,7 @@ app.post('/generate', async (req, res) => {
         if (response.status === 200) {
             // Convert the image buffer to base64 for sending to client
             const base64Image = Buffer.from(response.data).toString('base64');
-            res.json({ image: `data:image/jpg;base64,${base64Image}` });
+            res.json({ image: `data:image/jpeg;base64,${base64Image}` });
         } else {
             throw new Error(`API Error: ${Buffer.from(response.data).toString()}`);
         }
